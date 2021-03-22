@@ -1,4 +1,3 @@
-# These are helpers functions used in the project to operate on CAMELS datasets
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import GradientBoostingClassifier
