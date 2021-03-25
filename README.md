@@ -116,7 +116,7 @@ Automated machine learning performed exceptionally well producing a number of ou
 ![](assets/aml_precision_recal.png)
 ![](assets/aml_auc.png)
 
-The model was tested on 9 out of sample dataset and generally performed better than Gradient Boosting classifier in terms of recall. Precision score was also low as expected. This **ensemble model is able to flag 135 failed banks out of 138 failed, as compared to only 124 flagged by GBM**.
+The model was tested on 9 out of sample dataset and generally performed better than Gradient Boosting classifier in terms of recall. Precision score was also low as expected. This **ensemble model is able to flag 132 failed banks out of 138 failed, as compared to only 124 flagged by GBM**.
 ![](assets/aml_oos_performance.png)
 
 Further improvements could include optimizing for AUC and training/testing on more data, say from 2008 to 2016.
