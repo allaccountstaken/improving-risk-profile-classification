@@ -60,7 +60,7 @@ Following the benchmark approach: the list of hyperparameters to tune included t
 
 It was interesting to see if HyperDrive could possibly recommend radically different settings. Therefore, Bayesian sampling was selected with the same random_state=123 for the actual classification model. The choice of parameter sampling required at least 80 runs.
 
-![](assets/hdr_config)
+![](assets/hdr_config.png)
 
 It is important to point out that AutoMl is not able to optimize basic recall score directly like sklearn grid search. Available primary metric, that seems to be closest to the recall score, is called norm_macro_recall from 0, random, to 1, perfect performance. Alternatively, AUC_weighted was considered as it considers an arithmetic mean of the score for each class, weighted by the number of true instances in each class. This optimization should probably be benchmarked agains sklearn grid search for roc_auc. (Source https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/machine-learning/how-to-understand-automated-ml.md) 
 
@@ -84,7 +84,6 @@ Further improvements could include performing 4 or more concurrent runs, as well
 ![](assets/hdr_best_performance.png)
 
 Although the best run had good performance in terms of recall, out of sample performance did not differ from the benchmark model.
-
 ![](assets/hdr_oos_performance.png)
 
 ## Automated ML
@@ -107,11 +106,11 @@ Automated machine learning performed exceptionally well producing a number of ou
 ![](assets/aml_perf_metrics.png)
 ![](assets/aml_confusion.png)
 ![](assets/aml_features.png)
-![](assets/aml_precision_recall.png)
+![](assets/aml_precision_recal.png)
 ![](assets/aml_auc.png)
 
 The model was tested in 9 out of sample dataset and generally performed better than Gradient Boosting classifier in terms of recall. Precision score was also low as expected.
-![](aml_oos_performance.png)
+![](assets/aml_oos_performance.png)
 
 ## Model Deployment
 The `VotingEnsemble` model tuned using automated machine learning achieved macro-recall of 0.94 and was selected for deployment. The model `automl_model.pkl` was saved and registered first. Successful deployment was confirmed here:
