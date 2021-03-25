@@ -89,50 +89,45 @@ Although the best run had good performance in terms of recall, out of sample per
 
 ## Automated ML
 For the experiments in this section it was decided to run from workspace blob storage; obviously the same dataset:
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_dataset.png)
+![](assets/camels11_dataset.png)
 
 As discussed above, achieving good recall score was the main goal and this is why `'norm_macro_recall'` was chosen as a primary metric. Timeout and number of concurrent iterations were set conservatively to control the costs.
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_Config.png)
+![](assets/aml_config.png)
 
-
-### Results
-Automated machine learning performed exceptionally well producing a number of outstanding recall scores. Further improvements could possibly include doing more out-of-sample testing and optimizing for AUC. 
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_BestModels.png)
-
-Below are the screenshots of the RunDetails widget as well as a screenshot of the best model trained with it's parameters.
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_RunDetails.png)
+Below are run details followed by the best model.
+![](assets/aml_rundetails1.png)
+![](assets/aml_rundetails2.png)
 
 The best model, `VotingEnsemble`, run ID is presented here:
 ![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_ModelRunId.png)
+![](assets/aml_best_model_id.png)
 
-Performance of the model was analysed in terms of its classification power:
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_Performance.png)
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_Recall.png)
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_ROC.png)
+### Results
+Automated machine learning performed exceptionally well producing a number of outstanding recall scores. Performance of the model was analysed in terms of its classification power:
+![](assets/aml_perf_metrics.png)
+![](assets/aml_confusion.png)
+![](assets/aml_features.png)
+![](assets/aml_precision_recall.png)
+![](assets/aml_auc.png)
 
-Here are additional details of the best model, `VotingEnsemble`:
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_VotingEnsemble1.png)
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_VotingEnsemble2.png)
+The model was tested in 9 out of sample dataset and generally performed better than Gradient Boosting classifier in terms of recall. Precision score was also low as expected.
+![](aml_oos_performance.png)
 
 ## Model Deployment
-The `VotingEnsemble` model tuned using automated machine learning achieved macro-recall of 0.94 and was selected for deployment. The model `automl_model.pkl` was saved and registered first.
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_DeplCode.png) 
-
-Successful deployment was confirmed here:
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_Healthy.png)
+The `VotingEnsemble` model tuned using automated machine learning achieved macro-recall of 0.94 and was selected for deployment. The model `automl_model.pkl` was saved and registered first. Successful deployment was confirmed here:
+![](assets/aml_deployment.png)
 
 Endpoints were created here:
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_Endpoints.png)
+![](assets/aci_endpoints.png)
+
+Testing for Positive and Negative instances was performed; details are in automatically generated `scoring.py` file. Here is an example of JSON payload with CAMELS features for 5 failed banks followed by responce [1, 1, 1, 1, 1], i.e. all are correctly predicted to fail.
+![](assets/aci_responce.png)
 
 Here is an example of the service logs:
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_SeviceLogs.png)
-
-Testing for Positive and Negative instances was performed; details are in automatically generated `scoring.py` file.
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_TestingPos.png) 
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_TestingNeg.png)
+![](assets/aci_service_logs.png)
 
 ## Screen Recording
-Link to a screen recording of the project in action. Remember that the screencast should demonstrate: https://www.youtube.com/watch?v=UCfJ44DDScY
+Link to a screen recording of the project in action: https://www.youtube.com/watch?v=UCfJ44DDScY
 
 - A working model
 - Demo of the deployed  model
