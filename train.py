@@ -100,6 +100,9 @@ def main():
     # Report performance metrics of the trained model using testing subset
     recall = recall_score(y_test, y_pred, average='binary')
     run.log("norm_macro_recall", np.round(np.float(recall), 5))
+#     recall = recall_score(y_test, y_pred, average='binary')
+#     run.log("Recall", np.round(np.float(recall), 5))
+
     
 
     # The code below can be used to store the model for later consumption
