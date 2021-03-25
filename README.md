@@ -1,8 +1,10 @@
-# Early Warning Financial Distress Classification System
+# Improving Financial Distress Classification System
 
-In normal, non-stressed environment, it is very hard to predict bank's failure as it is a very rare event equivalent of anomaly detection; for more information please visit https://www.bankrate.com/banking/list-of-failed-banks/. There was a significant increase in the number of failed banks in the US from 2009 to 2014 what produced enough data for effective classification. Notwithstanding the spike in failures, it was still necessary to create comparable risk profiles. Below are annual counts of regulated banks, healthy in blue and failed in red.
+In normal, non-stressed environment, it is very hard to predict bank's failure as it is a very rare event equivalent of anomaly detection; for more information please visit https://www.bankrate.com/banking/list-of-failed-banks/. 
 
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/plots/all_banks.png) 
+There was a significant increase in the number of failed banks in the US from 2009 to 2014 what produced enough data for effective classification. Notwithstanding the spike in failures, it was still necessary to create comparable risk profiles. Below are annual counts of regulated banks, healthy in blue and failed in red.
+
+![](./all_banks.png) 
 
 The primary objective was to develop an early warning system, i.e. binary classification of failed (`'Target'==1`) vs. survived (`'Target'==0`), for the US banks using their quarterly filings with the regulator. Overall, 137 failed banks and 6,877 surviving banks were used in this machine learning exercise. Historical observations from the first 4 quarters ending 2010Q3 (stored in `./data`) are used to tune the model and out-of-sample testing is performed on quarterly data starting from 2010Q4 (stored in `./oos`).  For more information on methodology please refer to supplemental `CAMELS.md` file included in the repository. Below are annual failures showing a clear increase in counts.
 
