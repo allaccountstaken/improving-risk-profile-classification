@@ -109,7 +109,7 @@ Automated machine learning performed exceptionally well producing a number of ou
 ![](assets/aml_precision_recal.png)
 ![](assets/aml_auc.png)
 
-The model was tested in 9 out of sample dataset and generally performed better than Gradient Boosting classifier in terms of recall. Precision score was also low as expected.
+The model was tested on 9 out of sample dataset and generally performed better than Gradient Boosting classifier in terms of recall. Precision score was also low as expected.
 ![](assets/aml_oos_performance.png)
 
 ## Model Deployment
