@@ -35,7 +35,7 @@ This framework can be used to assess performance along six risk dimensions: 1) C
 
 Financial metrics recorded in the last reports of the failed banks should have predictive power that is needed to forecast future failures. Due to significant class imbalances and taking into account costs associated with financial distress, the model should aim to maximize the recall score. In other words, accuracy is probably not the best metrics, as Type II error needs to be minimized.
 
-Basic benchmark model was created in order to better understand the requirements. Sklearn `train-test-split` was used with `StandardScaler` to prepare for Gradient Boosting tree-based `GridSearch`, optimizing for recall. The trained model performed reasonably well on the testing dataset with AUC of 0.97. Out-of-sample results were also very promising as recall scores  were ranging from 0.76 to 1. Out of 138 banks that failed during the period from 2010Q4 to 2012Q4 the benchmark model correctly flags 124 failed banks based solely on the information from their last CALL reports. With time the number of failed banks decreases sharply and so does predictive power of the model.
+Basic benchmark model was created in order to better understand the requirements. Sklearn `train-test-split` was used with `StandardScaler` to prepare for Gradient Boosting tree-based `GridSearch`, optimizing for recall. The trained model performed reasonably well on the testing dataset with AUC of 0.97. Out-of-sample results were also very promising as recall scores  were ranging from 0.76 to 1. Out of 138 banks that failed during the period from 2010Q4 to 2012Q4 **the benchmark model correctly flags 124 failed banks** based solely on the information from their last CALL reports. With time the number of failed banks decreases sharply and so does predictive power of the model.
 
 ![](assets/oos_GBM.png)
 
@@ -116,7 +116,7 @@ Automated machine learning performed exceptionally well producing a number of ou
 ![](assets/aml_precision_recal.png)
 ![](assets/aml_auc.png)
 
-The model was tested on 9 out of sample dataset and generally performed better than Gradient Boosting classifier in terms of recall. Precision score was also low as expected.
+The model was tested on 9 out of sample dataset and generally performed better than Gradient Boosting classifier in terms of recall. Precision score was also low as expected. This **ensemble model is able to flag 135 failed banks out of 138 failed, as compared to only 124 flagged by GBM**.
 ![](assets/aml_oos_performance.png)
 
 Further improvements could include optimizing for AUC and training/testing on more data, say from 2008 to 2016.
