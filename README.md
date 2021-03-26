@@ -111,8 +111,8 @@ Below are run details followed by the best model.
 ![](assets/aml_rundetails2.png)
 
 The best model, `VotingEnsemble`, was registered
-![](assets/aml_register_model.png)
-run ID is presented here:
+![](assets/aml_registered_model.png)
+Abd run ID is presented here:
 ![](assets/aml_best_runid.png)
 
 ### Results
