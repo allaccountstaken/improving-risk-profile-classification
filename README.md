@@ -1,8 +1,9 @@
 # Improving Financial Distress Classification System
 
 ## Introduction
-This project aims to find the best model for out-of-sample forecast using Azure `HyperDrive` and `AutoML` functionalities. The best model will be deployed using ACI web servcies. Below is high level overview diagram:
+This project aims to find the best model for out-of-sample forecast using Azure `HyperDrive` and `AutoML` functionalities. The best model will be deployed using ACI web servcies on Azure Container Instances. First training data is used to produce a basic benchmark model. This model is use to create `train.py` script for `HyperDrive` parameters tuning. Performance of both models is compared on out-of-sample data in terms of recall score and found to be similar. Same training data is uploaded into Azure portal for `AutoML` run that produces a better model. This model is registered and deployed to produce superior out-of-sample forecast. Below is high level overview diagram:
 ![](assets/project_diagram.png)
+
 ## Business Problem
 
 In normal, non-stressed environment, it is very hard to predict bank's failure as it is a very rare event equivalent of anomaly detection; for more information please visit https://www.bankrate.com/banking/list-of-failed-banks/. 
