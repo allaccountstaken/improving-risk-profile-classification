@@ -154,10 +154,6 @@ Here is an example of the service logs:
 
 ## Screen Recording
 
-Link to a screen recording of the project in action, short 5-min demo: https://youtu.be/SlQDB2klrCU
-Full walk-through: https://www.youtube.com/watch?v=UCfJ44DDScY
-
-- A working model
-- Demo of the deployed  model
-- Demo of a sample request sent to the endpoint and its response
-
+Link to a screen recording of the project in action
+- Short 5-min demo: https://www.youtube.com/watch?v=SlQDB2klrCU
+- Full walk-through: https://www.youtube.com/watch?v=UCfJ44DDScY
