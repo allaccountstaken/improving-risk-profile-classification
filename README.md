@@ -110,9 +110,10 @@ Below are run details followed by the best model.
 ![](assets/aml_rundetails1.png)
 ![](assets/aml_rundetails2.png)
 
-The best model, `VotingEnsemble`, run ID is presented here:
-![](https://github.com/allaccountstaken/automl_v_hyperdrive/blob/main/imgs/Automl_ModelRunId.png)
-![](assets/aml_best_model_id.png)
+The best model, `VotingEnsemble`, was registered
+![](assets/aml_register_model.png)
+run ID is presented here:
+![](assets/aml_best_runid.png)
 
 ### Results
 
@@ -131,13 +132,17 @@ Further improvements could include optimizing for AUC and training/testing on mo
 ## Model Deployment
 
 The `VotingEnsemble` model tuned using automated machine learning achieved `norm-macro-recall` of 0.94 and was selected for deployment. The model `automl_model.pkl` was saved and registered first. Successful deployment was confirmed here:
-![](assets/aml_deployment.png)
+![](assets/aciservice_created.png)
+![](assets/aciservice_healthy.png)
+![](assets/aciservice_keys.png)
+![](assets/aciservice_deployment_logs.png)
 
 Endpoints were created here:
 ![](assets/aci_endpoints.png)
 
 Testing for Positive and Negative instances was performed; details are in automatically generated `scoring.py` file. Here is an example of JSON payload with CAMELS features for 5 failed banks followed by responce [1, 1, 1, 1, 1], i.e. all are correctly predicted to fail.
-![](assets/aci_responce.png)
+![](assets/aci_request.png)
+![](assets/aci_response.png)
 
 Here is an example of the service logs:
 ![](assets/aci_service_logs.png)
