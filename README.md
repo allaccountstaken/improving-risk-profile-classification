@@ -71,7 +71,7 @@ It is important to point out that AutoMl is not able to optimize basic recall sc
 
 ### Results
 
-HyperDrive run was completed in approximately 1 hour and 50 minutes and produced promicing results. The best model produced norm_macro_recall of 0.74:
+HyperDrive run was completed in approximately 1 hour and 50 minutes and produced promising results. The best model produced norm_macro_recall of 0.74:
 
          {'Learning rate:': 0.1,
          'Number of estimators:': 20,
