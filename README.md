@@ -137,8 +137,8 @@ The `VotingEnsemble` model tuned using automated machine learning achieved `norm
 ![](assets/aciservice_keys.png)
 ![](assets/aciservice_deployment_logs.png)
 
-Endpoints were created here:
-![](assets/aci_endpoints.png)
+Scoring URI and the keys were brought into the Notebook:
+![](assets/aci_scoring_uri.png)
 
 Testing for Positive and Negative instances was performed; details are in automatically generated `scoring.py` file. Here is an example of JSON payload with CAMELS features for 5 failed banks followed by responce [1, 1, 1, 1, 1], i.e. all are correctly predicted to fail.
 ![](assets/aci_request.png)
