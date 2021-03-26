@@ -67,7 +67,7 @@ It was interesting to see if HyperDrive could possibly recommend radically diffe
 
 ![](assets/hdr_config.png)
 
-It is important to point out that AutoMl is not able to optimize basic recall score directly like sklearn grid search. Available primary metric, that seems to be closest to the recall score, is called norm_macro_recall from 0, random, to 1, perfect performance. Alternatively, AUC_weighted was considered as it considers an arithmetic mean of the score for each class, weighted by the number of true instances in each class. This optimization should probably be benchmarked agains sklearn grid search for roc_auc. (Source https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/machine-learning/how-to-understand-automated-ml.md) 
+It is important to point out that AutoML can't to optimize basic recall score directly. Available primary metric, that seems to be close to the recall score, is called norm_macro_recall from 0, random, to 1, perfect performance. Alternatively, AUC_weighted was considered as it considers an arithmetic mean of the score for each class, weighted by the number of true instances in each class. This optimization should probably be benchmarked agains sklearn grid search for roc_auc. (Source https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/machine-learning/how-to-understand-automated-ml.md) 
 
 ### Results
 
