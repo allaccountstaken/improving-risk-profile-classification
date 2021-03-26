@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project aims to find the best model for out-of-sample forecast using Azure `HyperDrive` and `AutoML` functionalities. The best model will be deployed using ACI web services on Azure Container Instances. First, the training dataset (yellow) is used to produce a basic benchmark model (green). This model is use to create `train.py` script for `HyperDrive` parameters tuning (red). Performance of both models is compared on out-of-sample data in terms of recall score and found to be similar. Same training dataset is uploaded into Azure portal for `AutoML` run that produces a better model (blue). This model is registered and deployed to produce superior out-of-sample forecast (purple). Below is high level overview diagram:
+This project aims to find the best model for out-of-sample forecast using Azure `HyperDrive` and `AutoML` functionalities. The best model will be deployed using web services on Azure Container Instances (ACI). First, the training dataset (yellow) is used to produce a benchmark model (green). This model is used to create `train.py` script for `HyperDrive` parameters tuning (red). Performance of both models is compared on out-of-sample data in terms of recall score and found to be similar. Same training dataset is uploaded into Azure portal for `AutoML` run that produces a better model (blue). This model is registered and deployed to produce superior out-of-sample forecast (purple). Below is a high level diagram:
 ![](assets/project_diagram.png)
 
 ## Business Problem
