@@ -122,7 +122,10 @@ Abd run ID is presented here:
 
 ### Results
 
-Automated machine learning performes exceptionally well producing a number of outstanding recall scores. Performance of the model can be analysed in terms of its classification power:
+Automated machine learning performes exceptionally well producing a number of outstanding recall scores. Generally, model averaging, voting or stacking, tends to produce better models for complex dataset, as it combines skills of already good models and, given enough data, it can learn how to combine these skills. Base models are making predictions and meta-model is combining them. Below is an example of one RandomForest model that served as a base-model with respective paramters. Every time traing runs, these parameters, base-models and meta-model may be different depending on the random state.
+![](aeests/aml_ensemble_params.png)
+
+Performance of the model can be analysed in terms of its classification power:
 ![](assets/aml_perf_metrics.png)
 ![](assets/aml_confusion.png)
 ![](assets/aml_features.png)
