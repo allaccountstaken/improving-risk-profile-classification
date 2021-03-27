@@ -125,10 +125,10 @@ Abd run ID is presented here:
 Automated machine learning performes exceptionally well producing a number of outstanding recall scores. Generally, model averaging, voting or stacking, tends to produce better models for complex datasets, as it combines skills of already good models and, given enough data, it can learn how to combine these skills. Base-models are making predictions and meta-model is combining them. Here are the members of the `VotingEnsemble`:
 ![](assets/aml_voting_members.png)
 
-Below is an example of one RandomForest model that served as a base-model with respective paramters. It seems that `criterion='emtropy'` and `n_jobs=1` are default starting values, but `num_leaves=31` possibly changed during the model tuning process. 
+Below is an example of one RandomForest model that served as a base-model with respective paramters. It seems that `criterion='entropy'` and `n_jobs=1` are default starting values, but `num_leaves=31` possibly changed during the model tuning process. 
 ![](assets/aml_ensemble_params.png)
 
-Moreover, every time the traing runs, all these parameters, the base-models and meta-model may be different depending on the random state. Second run on the same training data achieved same recall score of 0.94 but used a different model, `StackEnsemble`. Below are the ensemble learners:
+Moreover, every time the traing runs, all these parameters as well as the base-models and meta-model choices may be different depending on the random seed. Second run on the same training data achieved same recall score of 0.94 but used a different model, `StackEnsemble`. Below are the ensemble learners:
 ![](assets/aml_stacked_members.png)
 
 Logistic regression served as a meta-model in this case:
