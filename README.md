@@ -21,7 +21,7 @@ The primary business objective is to develop an early warning system, i.e. binar
 
 ### Overview
 
-Approximately 2,000 original features were obtained for every bank instance from "Report of Condition and Income" (CALL report) using publicly available APIs at https://banks.data.fdic.gov/docs/. Sample report is available here `'data/CALL_175458.PDF'`. Eventually, only 14 financial metrics are used for the actual classification:
+Approximately 2,000 original features are obtained for every bank instance from "Report of Condition and Income" (CALL report) using publicly available APIs at https://banks.data.fdic.gov/docs/. Sample report is available here `'data/CALL_175458.PDF'`. Eventually, only 14 financial metrics are used for the actual classification:
 
 ![](assets/selected_financials.png)
 
