@@ -122,7 +122,7 @@ Abd run ID is presented here:
 
 ### Results
 
-Automated machine learning performes exceptionally well producing a number of outstanding recall scores. Generally, model averaging, voting or stacking, tends to produce better models for complex datasets, as it combines skills of already good models and, given enough data, it can learn how to combine these skills. Base-models are making predictions and meta-model is combining them. Here are the members of the `VotingEnsemble`:
+Automated machine learning performes exceptionally well producing a number of outstanding recall scores. Generally, model averaging, voting or stacking, tends to produce better models for complex datasets, as it combines skills of already good models and, given enough data, it can learn how to benigit from all these skills. In AutoML case base-models are making predictions and meta-model is combining them. Here are the learners of the `VotingEnsemble`:
 ![](assets/aml_voting_members.png)
 
 Below is an example of one RandomForest model that served as a base-model with respective paramters. It seems that `criterion='entropy'` and `n_jobs=1` are default starting values, but `num_leaves=31` possibly changed during the model tuning process. 
