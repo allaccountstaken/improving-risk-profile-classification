@@ -155,5 +155,5 @@ Here is an example of the service logs:
 ## Screen Recording
 
 Link to a screen recording of the project in action
-- Short 5-min demo: https://www.youtube.com/watch?v=SlQDB2klrCU
+- Short 5-min demo: https://youtu.be/C_XbTQuf1VQ
 - Full walk-through: https://www.youtube.com/watch?v=UCfJ44DDScY
