@@ -92,7 +92,7 @@ Further improvements could include performing 4 or more concurrent runs, as well
 ![](assets/hdr_bestrun_id.png)
 ![](assets/hdr_best_performance.png)
 
-Although the best run has good performance in terms of recall, out-of-sample performance does not noticable differ from the benchmark model.
+Although the best run has good performance in terms of recall, out-of-sample performance does not differ from the benchmark model.
 ![](assets/hdr_oos_performance.png)
 
 ## Automated ML
@@ -101,7 +101,7 @@ Although the best run has good performance in terms of recall, out-of-sample per
 
 Generally speaking, decision trees should work well for this task, as these models do not make any functional form assumptions, handle both categorical and continuous data well, and are easy to interpret. Tree-based models simply aim to reduce entropy at every split and are therefore very straightforward, no need to worry about missing data and scaling. They are not very stable though, as new data may produce a totally different tree, and they also tend to overfit.
 
-Possible solution would be model averaging - employing “wisdom of the crowd”. It seems that for the present task two paths are possible: reducing variance or reducing bias. The former implies complex model, i.e. starting with a bushy, high-variance tree and resampling with replacement, what will produce a family of Random Forest models. The later implies starting with a simple model, i.e. possible a stump, high-bias classifier and learning from miss-classified instances, what will produce a family of Boosting models.
+Possible solution would be model averaging - employing “wisdom of the crowd”. It seems that for the present task two paths are possible: reducing variance or reducing bias. The former implies complex model, i.e. starting with a bushy, high-variance tree and resampling with replacement, what will produce a family of Random Forest models. The later implies starting with a simple model, i.e. possibly a stump, high-bias classifier and learning from miss-classified instances, what will produce a family of Boosting models.
 
 ### Experiment Setup
 
@@ -122,7 +122,7 @@ Abd run ID is presented here:
 
 ### Results
 
-Automated machine learning performes exceptionally well producing a number of outstanding recall scores. Generally, model averaging, voting or stacking, tends to produce better models for complex datasets, as it combines skills of already good models and, given enough data, it can learn how to benigit from all these skills. In AutoML case base-models are making predictions and meta-model is combining them. Here are the learners of the `VotingEnsemble`:
+Automated machine learning performes exceptionally well producing a number of outstanding recall scores. Generally, model averaging, voting or stacking, tends to produce better models for complex datasets, as it combines skills of already good models and, given enough data, it can learn how to benigit from all these skills. In `AutoML` case base-models are making predictions and meta-model is combining them. Here are the learners of the `VotingEnsemble`:
 ![](assets/aml_voting_members.png)
 
 Below is an example of one RandomForest model that served as a base-model with respective paramters. It seems that `criterion='entropy'` and `n_jobs=1` are default starting values, but `num_leaves=31` possibly changed during the model tuning process. 
